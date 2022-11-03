@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "46641563347",
+    "project_id": "tutorial-33a29",
+    "storage_bucket": "tutorial-33a29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46641563347:android:87af6b6a8f8d0e6d9ef626",
+        "android_client_info": {
+          "package_name": "com.example.flutter_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46641563347-1fqbn74f4v5oscslcm32vpsd36ukfooq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUvFh4FsgIIzcynPInyNR8Wt1nfhhcQvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46641563347-1fqbn74f4v5oscslcm32vpsd36ukfooq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
