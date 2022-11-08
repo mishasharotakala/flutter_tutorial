@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/app_theme.dart';
 import 'package:flutter_tutorial/homepage/first_widget.dart';
 
 class JustPage extends StatefulWidget {

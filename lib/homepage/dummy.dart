@@ -1,7 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/homepage/first_widget.dart';
 import 'package:flutter_tutorial/homepage/firstpage.dart';
 import 'package:flutter_tutorial/homepage/grid.dart';
 import 'package:flutter_tutorial/homepage/justpage.dart';

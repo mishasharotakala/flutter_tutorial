@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class FirstWidget extends StatefulWidget{
+class DabWidget extends StatefulWidget{
   final String image;
   final String name;
   
 
-  const FirstWidget({super.key, 
+  const DabWidget({super.key, 
     required this.image,
     required this.name,
   });
 
   @override 
-  State<FirstWidget> createState() => _FirstWidget();
+  State<DabWidget> createState() => _DabWidget();
 }
 
-class _FirstWidget extends State<FirstWidget> {
+class _DabWidget extends State<DabWidget> {
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
