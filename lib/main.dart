@@ -2,6 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/app_theme.dart';
 import 'package:flutter_tutorial/home.dart';
+import 'package:flutter_tutorial/screens/authScreens/auth_screen.dart';
+import 'package:flutter_tutorial/screens/authScreens/login_tab_page.dart';
+import 'package:flutter_tutorial/screens/authScreens/signup_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +23,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: theme,
-      home: const Home(),
+      //home: SignUpScreen(),
+      //home: LoginScreen(),
+      home: AuthScreen(),
+      //home: const Home(),
       //home: const FirstPage(),
       //home: const DummyPage(),
     );
