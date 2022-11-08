@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/screens/authScreens/custom_text_field.dart';
 import 'package:flutter_tutorial/screens/authScreens/text_field_input.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginTabPage extends StatefulWidget {
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginTabPage> createState() => _LoginTabPageState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginTabPageState extends State<LoginTabPage> {
   
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();

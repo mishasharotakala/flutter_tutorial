@@ -45,7 +45,7 @@ class _AuthScreenState extends State<AuthScreen> {
         body: Container(
           child: TabBarView(
             children: [
-              LoginScreen(),
+              LoginTabPage(),
               RegistrationScreen(),
             ],
           ),
