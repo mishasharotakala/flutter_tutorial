@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tutorial/screens/authScreens/text_field_input.dart';
 import 'package:flutter_tutorial/screens/myscreens/pickImage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -45,12 +46,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(child: Container(), flex: 2,),
+              Text(
+                'shopping 🛍',
+                style: GoogleFonts.lobster(
+                  textStyle: const TextStyle(
+                    fontSize: 30,
+                    //fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               //svg image,
-              SvgPicture.asset(
+              /*SvgPicture.asset(
                 'assets/shopping-svgrepo-com (1).svg',
                 color: Colors.white,
                 height: MediaQuery.of(context).size.height * 0.20,
-              ),
+              ),*/
               const SizedBox(height: 10,),
 
               // circular widget to accept and show our selected file

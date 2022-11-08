@@ -4,29 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/screens/authScreens/custom_text_field.dart';
 import 'package:image_picker/image_picker.dart';
 
-class RegistrationScreen extends StatefulWidget {
+class RegistrationTabPage extends StatefulWidget {
 
   @override
-  State<RegistrationScreen> createState() => _RegistrationScreenState();
+  State<RegistrationTabPage> createState() => _RegistrationTabPageState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class _RegistrationTabPageState extends State<RegistrationTabPage> {
 
-  final TextEditingController _nameTextEditingController = TextEditingController();
-  final TextEditingController _emailTextEditingController = TextEditingController();
-  final TextEditingController _passwordTextEditingController = TextEditingController();
-  final TextEditingController _confirmPasswordTextEditingController = TextEditingController();
-  Uint8List? _image;
+  final TextEditingController nameTextEditingController = TextEditingController();
+  final TextEditingController emailTextEditingController = TextEditingController();
+  final TextEditingController passwordTextEditingController = TextEditingController();
+  final TextEditingController confirmPasswordTextEditingController = TextEditingController();
+  //Uint8List? _image;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  @override 
-  void dispose() {
-    super.dispose();
-    _nameTextEditingController.dispose();
-    _emailTextEditingController.dispose();
-    _passwordTextEditingController.dispose();
-    _confirmPasswordTextEditingController.dispose();
-  }
+ 
   /*XFile? imgxFile;
   final ImagePicker imagePicker = ImagePicker();*/
 
@@ -45,7 +38,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               child: CircleAvatar(
                 radius: MediaQuery.of(context).size.width *0.20,
                 backgroundColor: const Color.fromARGB(255, 234, 233, 233),
-                backgroundImage: MemoryImage(_image!),
+                //backgroundImage: MemoryImage(_image!),
                 child: Icon(
                   Icons.add_photo_alternate,
                   color: const Color.fromARGB(255, 46, 83, 101),
@@ -61,33 +54,37 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 children: [
                   //name
                   CustomTextField(
-                    textEditingController: _nameTextEditingController,
+                    textEditingController: nameTextEditingController,
                     iconData: Icons.person,
                     hintText: 'Name',
+                    textInputType: TextInputType.text,
                     isObscre: false,
                     enabled: true,
                   ),
                   //email
                   CustomTextField(
-                    textEditingController: _emailTextEditingController,
+                    textEditingController: emailTextEditingController,
                     iconData: Icons.email,
                     hintText: 'Email',
+                    textInputType: TextInputType.emailAddress,
                     isObscre: false,
                     enabled: true,
                   ),
                   //password
                   CustomTextField(
-                    textEditingController: _passwordTextEditingController,
-                    iconData: Icons.lock,
+                    textEditingController: passwordTextEditingController,
+                    iconData: Icons.lock_outline,
                     hintText: 'Password',
+                    textInputType: TextInputType.text,
                     isObscre: true,
                     enabled: true,
                   ),
                   //confirmPassword
                   CustomTextField(
-                    textEditingController: _confirmPasswordTextEditingController,
-                    iconData: Icons.lock_open_sharp,
+                    textEditingController: confirmPasswordTextEditingController,
+                    iconData: Icons.lock_outline,
                     hintText: 'Confirm Password',
+                    textInputType: TextInputType.text,
                     isObscre: true,
                     enabled: true,
                   ),

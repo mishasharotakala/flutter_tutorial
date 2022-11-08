@@ -5,6 +5,7 @@ class CustomTextField extends StatefulWidget {
   TextEditingController? textEditingController;
   IconData? iconData;
   String? hintText;
+  TextInputType? textInputType;
   bool? isObscre = true;
   bool? enabled = true;
 
@@ -12,7 +13,8 @@ class CustomTextField extends StatefulWidget {
     super.key,
     this.textEditingController, 
     this.iconData, 
-    this.hintText, 
+    this.hintText,
+    this.textInputType,
     this.isObscre, 
     this.enabled,
   });
@@ -26,25 +28,28 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.all(8),
-      child: TextFormField(
+      child: TextField(
         enabled: widget.enabled,
         controller: widget.textEditingController,
         obscureText: widget.isObscre!,
         cursorColor: Theme.of(context).primaryColor,
         decoration: InputDecoration(
+          //hintText: widget.hintText,
           border: InputBorder.none,
           prefixIcon: Icon(
             widget.iconData,
-            color: const Color.fromARGB(255, 72, 38, 78),
+            color: Theme.of(context).primaryColor,
           ),
           focusColor: Theme.of(context).primaryColor,
           hintText: widget.hintText,
+          //keyboardType: widget.textInputType,
         ),
+        keyboardType: widget.textInputType,
       ),
     );
   }
