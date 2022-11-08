@@ -1,7 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/screens/abc.dart';
+import 'package:flutter_tutorial/homepage/second_page.dart';
+import 'package:flutter_tutorial/screens/grid_page.dart';
 import 'package:flutter_tutorial/screens/home_screen.dart';
+import 'package:flutter_tutorial/screens/screen_page.dart';
 // 1
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -23,13 +25,16 @@ class Home extends StatefulWidget {
       // ignore: todo
       //TODO: Replace with Card2
       //const ABC(),
-      Container(color: Colors.transparent,),
+      const ScreenPage(),
+      //Container(color: Colors.transparent,),
       // ignore: todo
       //TODO: Replace with Card3
-      Container(color: Colors.teal,),
+      const Grid(),
+      //Container(color: Colors.teal,),
       // ignore: todo
       //TODO: Replace with Card4
-      Container(color: Colors.cyan,),
+      const SecondPage(),
+      //Container(color: Colors.cyan,),
      ];
 
      /*void _onItemTapped(int index) {
