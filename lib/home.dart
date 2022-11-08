@@ -1,5 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/screens/abc.dart';
+import 'package:flutter_tutorial/screens/home_screen.dart';
 // 1
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,9 +18,11 @@ class Home extends StatefulWidget {
      static List<Widget> pages = <Widget>[
       // ignore: todo
       //TODO: Replace with Home
-      Container(color: Colors.blueGrey,),
+      const HomeScreen(),
+      //Container(color: Colors.blueGrey,),
       // ignore: todo
       //TODO: Replace with Card2
+      //const ABC(),
       Container(color: Colors.transparent,),
       // ignore: todo
       //TODO: Replace with Card3
@@ -46,14 +50,14 @@ class Home extends StatefulWidget {
       ];
       return Scaffold(
         extendBody: true,
-        appBar: AppBar(
+        /*appBar: AppBar(
           title: Text(
             'App',
             // 2
             style: Theme.of(context).textTheme.headline6,
           ),
           centerTitle: true,
-        ),
+        ),*/
 
         // ignore: todo
         // TODO: Show selected tab
