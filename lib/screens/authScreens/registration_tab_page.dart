@@ -1,7 +1,8 @@
-import 'dart:typed_data';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/screens/authScreens/custom_text_field.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 
 class RegistrationTabPage extends StatefulWidget {
@@ -18,10 +19,47 @@ class _RegistrationTabPageState extends State<RegistrationTabPage> {
   final TextEditingController confirmPasswordTextEditingController = TextEditingController();
   //Uint8List? _image;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+   
+   XFile? imgXFile;
+   final ImagePicker imagePicker = ImagePicker();
 
- 
-  /*XFile? imgxFile;
-  final ImagePicker imagePicker = ImagePicker();*/
+   getImageFromGallery() async {
+    imgXFile = await imagePicker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      imgXFile;
+    });
+   }
+  
+  formValidation() async {
+    //image is not selected
+    if(imgXFile == null) {
+      Fluttertoast.showToast(msg: 'Please select an image.');
+    } 
+    // image is already selected
+    else {
+      // password is equal to confirm password
+      if(passwordTextEditingController.text == confirmPasswordTextEditingController.text) {
+        // check name, email, password and confirmPassword text fields
+        if (nameTextEditingController.text.isNotEmpty 
+            && emailTextEditingController.text.isNotEmpty
+            && passwordTextEditingController.text.isNotEmpty
+            && confirmPasswordTextEditingController.text.isNotEmpty
+          ) {
+            // 1. upload image to storage
+            // 2. save the user info to firebase database
+          }
+          else {
+            Fluttertoast.showToast(msg: 'Please complete the form');
+          }
+      }
+      // password is NOT equal to confirm password
+      else{
+        Fluttertoast.showToast(msg: 'Password and Confirm Password do not match');
+      }
+    }
+  }
+
 
   @override 
   Widget build(BuildContext context) {
@@ -34,16 +72,22 @@ class _RegistrationTabPageState extends State<RegistrationTabPage> {
             GestureDetector(
               onTap: () {
                 //pickImage();
+                getImageFromGallery();
               },
               child: CircleAvatar(
                 radius: MediaQuery.of(context).size.width *0.20,
                 backgroundColor: const Color.fromARGB(255, 234, 233, 233),
-                //backgroundImage: MemoryImage(_image!),
-                child: Icon(
-                  Icons.add_photo_alternate,
-                  color: const Color.fromARGB(255, 46, 83, 101),
-                  size: MediaQuery.of(context).size.width * 0.20,
-                ),
+                backgroundImage: imgXFile == null 
+                    ? null 
+                    : FileImage(
+                      File(imgXFile!.path),
+                    ),
+                child: imgXFile == null 
+                    ? Icon(
+                      Icons.add_photo_alternate,
+                      color: const Color.fromARGB(255, 46, 83, 101),
+                      size: MediaQuery.of(context).size.width * 0.20,
+                    ) : null,
               ),
             ),
             const SizedBox(height: 5,),
@@ -101,7 +145,9 @@ class _RegistrationTabPageState extends State<RegistrationTabPage> {
                   vertical: 12,
                 ),
               ),
-              onPressed: () {}, 
+              onPressed: () {
+                formValidation();
+              }, 
               child: Text(
                 'Sign Up',
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
