@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/screens/authScreens/login_tab_page.dart';
 import 'package:flutter_tutorial/screens/authScreens/registration_tab_page.dart';
+import 'package:flutter_tutorial/screens/myscreens/dummy_signup_screen.dart';
 
 class AuthScreen extends StatefulWidget {
 
@@ -46,6 +47,7 @@ class _AuthScreenState extends State<AuthScreen> {
           child: TabBarView(
             children: [
               LoginTabPage(),
+              //DummySignUpScreen(),
               RegistrationTabPage(),
             ],
           ),

@@ -6,19 +6,20 @@ import 'package:flutter_tutorial/global/global.dart';
 import 'package:flutter_tutorial/home.dart';
 import 'package:flutter_tutorial/screens/authScreens/custom_text_field.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart' as fStorage;
 import 'package:shared_preferences/shared_preferences.dart';
 
-class RegistrationTabPage extends StatefulWidget {
-  const RegistrationTabPage({super.key});
+class DummySignUpScreen extends StatefulWidget {
+  const DummySignUpScreen({super.key});
 
 
   @override
-  State<RegistrationTabPage> createState() => _RegistrationTabPageState();
+  State<DummySignUpScreen> createState() => _DummySignUpScreenState();
 }
 
-class _RegistrationTabPageState extends State<RegistrationTabPage> {
+class _DummySignUpScreenState extends State<DummySignUpScreen> {
 
   final TextEditingController nameTextEditingController = TextEditingController();
   final TextEditingController emailTextEditingController = TextEditingController();
@@ -132,6 +133,15 @@ class _RegistrationTabPageState extends State<RegistrationTabPage> {
       child: Container(
         child: Column(
           children: [
+            Text(
+                'shopping 🛍',
+                style: GoogleFonts.lobster(
+                  textStyle: const TextStyle(
+                    fontSize: 30,
+                    //fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             const SizedBox(height: 10,),
             //get or capture image
 
@@ -156,7 +166,7 @@ class _RegistrationTabPageState extends State<RegistrationTabPage> {
                   ),
                   Positioned(
                     bottom: -10,
-                    left: 95,
+                    left: 70,
                     child: IconButton(
                       onPressed: getImageFromGallery,
                       icon: const Icon(
