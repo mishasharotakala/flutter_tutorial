@@ -1,12 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/app_theme.dart';
+import 'package:flutter_tutorial/global/global.dart';
 import 'package:flutter_tutorial/screens/authScreens/auth_screen.dart';
 import 'package:flutter_tutorial/screens/myscreens/login_screen.dart';
 import 'package:flutter_tutorial/screens/myscreens/signup_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  sharedPreferences = await SharedPreferences.getInstance();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
